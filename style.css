@@ -1,0 +1,179 @@
+/*USING BEM ARQUITECTURE*/
+:root {
+    --bg-color: #8f57fd;
+    --secondary-color: rgba(255,255,255,.1);
+    --green-color: #21c08b;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: "Mulish", sans-serif;
+    margin: 0px;
+}
+
+.header {
+    align-items: center;
+    background: var(--bg-color);
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header__img {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+.header__menu {
+    margin-right: 30px;
+}
+.header__menu ul {
+    display: none;
+    list-style: none;
+    margin: 0px 0px 0px -14px;
+    padding: 0px;
+    position: absolute;
+    text-align: right;
+    width: 100px;
+}
+
+.header__menu:hover ul,
+ul:hover {
+    display: block;
+}
+
+.header__menu:hover li {
+    margin: 10px 0;
+}
+
+.header__menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+
+.header__menu--profile {
+    align-items: center;
+    display: flex;
+    margin-right: 8px;
+}
+
+.header__menu--profile img {
+    margin-right: 8px;
+    width: 40px;
+}
+
+.header__menu--profile p {
+    color: white;
+    margin: 0;
+}
+
+.main {
+    align-items: center;
+    border: 1px solid salmon;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+}
+
+.main__title {
+    color: white;
+    font-size: 25px;
+}
+
+.input-app {
+    background: var(--secondary-color);
+    border-radius: 30px;
+    border: 2px solid white;
+    color:white;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    height: 50px;
+    outline: none;
+    padding: 0 20px;
+    width: 70%;
+}
+.input-app::placeholder{
+    color: white;
+}
+
+.carousel{
+    overflow-x: scroll;
+    padding: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.carousel__container{
+    margin: 70px 0;
+    padding-bottom: 10px;
+    white-space: nowrap; /* Elementos fluyan sin romperse hacia abajo*/
+}
+
+.carousel-item{
+    background: palevioletred;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    height: 220px;
+    margin-right: 10px;
+    overflow: hidden;
+    transition: 450ms all;
+    transform-origin: center left;
+    width: 180px;
+    position: relative;
+}
+
+.carousel-item:hover ~ .carousel-item{
+    transform: translate3d(100px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item{
+    opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover{
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.carousel-item__img{
+    height: 220px;
+    object-fit: cover;
+    width: 180px;
+}
+
+.carousel-item__details{
+    background: linear-gradient(to top, rgba(0,0,0,.9 0%), rgba(0,0,0,0) 100%);
+    bottom: 0;
+    color: white;
+    font-style: 10px;
+    left: 0;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 450ms opacity;
+
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.carousel-item__details img{
+    height: 15px;
+}
+.carousel-item__details p{
+    margin: 0;
+}
+
+.carousel-item__details:hover{
+    bottom: 10px;
+    opacity: 1;
+}
