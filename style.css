@@ -5,29 +5,14 @@
     --green-color: #21c08b;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     background: var(--bg-color);
     font-family: "Mulish", sans-serif;
     margin: 0px;
-}
-
-/* Scroll */
-::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 4px;
-}
-::-webkit-scrollbar:hover {
-    background: #b3b3b3;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-}
-::-webkit-scrollbar:hover:active {
-    background: #999;
 }
 
 .header {
@@ -97,6 +82,7 @@ ul:hover {
     flex-direction: column;
     height: 300px;
     justify-content: center;
+    width: 100%;
 }
 
 .main__title {
@@ -351,6 +337,54 @@ ul:hover {
     display: block;
     margin-top: 60px;
     text-align: center;
+}
+
+.not-found {
+    color: white;
+    align-items: center;
+    background: linear-gradient(#21c08b, #ab88ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    padding: 0px 30px;
+}
+
+.not-found__title {
+    font-size: 60px;
+    margin: 4px;
+}
+
+.not-found__button{
+    border-radius: 20px;
+    padding: 8px 16px;
+    height: 40px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+.not-found__button:hover{
+    transform: scale(1.08);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.pulse {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 /*600px or less*/
