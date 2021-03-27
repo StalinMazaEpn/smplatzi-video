@@ -1,0 +1,21 @@
+{
+  "name": "platzi_video_frontsm",
+  "version": "1.0.0",
+  "description": "Repositorio del curso de Frontend Developer de Platzi",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass ./styles.scss ./styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StalinMazaEpn/smplatzi-video.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StalinMazaEpn/smplatzi-video/issues"
+  },
+  "homepage": "https://github.com/StalinMazaEpn/smplatzi-video#readme"
+}
