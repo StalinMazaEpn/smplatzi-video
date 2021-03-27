@@ -2,13 +2,20 @@
 
 $white: #fff;
 
+@mixin flex($direction, $horizontal, $vertical){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $horizontal;
+    align-items: $vertical;
+  }
+
+  
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     -ms-border-radius: $radius;
     border-radius: $radius;
 }
-    
 
 :root {
     --bg-color: #8f57fd;
@@ -16,8 +23,10 @@ $white: #fff;
     --green-color: #21c08b;
 }
 
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -26,13 +35,17 @@ body {
     margin: 0px;
 }
 
-.header {
-    align-items: center;
-    background: var(--bg-color);
+.flex {
     display: flex;
+    align-items: center;
+}
+
+.header {
+    background: var(--bg-color);
     height: 80px;
     justify-content: space-between;
     width: 100%;
+    @include flex(initial, space-between, center);
 }
 
 .header__img {
@@ -72,9 +85,8 @@ ul:hover {
 }
 
 .header__menu--profile {
-    align-items: center;
-    display: flex;
     margin-right: 8px;
+    @extend .flex;
 }
 
 .header__menu--profile img {
@@ -88,8 +100,7 @@ ul:hover {
 }
 
 .main {
-    align-items: center;
-    display: flex;
+    @extend .flex;
     flex-direction: column;
     height: 300px;
     justify-content: center;
@@ -99,6 +110,7 @@ ul:hover {
 .main__title {
     color: $white;
     font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .categories__title {
@@ -203,13 +215,12 @@ ul:hover {
 
 .login,
 .register {
-    align-items: center;
     background: linear-gradient(#21c08b, #ab88ff);
-    display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: calc(100vh - 200px);
     padding: 0px 30px;
+    @extend .flex;
 }
 
 .login__container,
@@ -220,7 +231,7 @@ ul:hover {
     border: 2px solid $white;
     color: $white;
     min-height: 500px;
-    padding: 60px 68px 40px;
+    padding: 60px 20px 40px;
     width: 300px;
 }
 
@@ -241,6 +252,10 @@ ul:hover {
     margin-top: 10px;
 }
 
+.login__container--remember-me input[type="checkbox"]{
+    margin-right: 8px;
+}
+
 .login__container--remember-me a {
     color: $white;
     text-decoration: none;
@@ -255,10 +270,9 @@ ul:hover {
     margin: 40px 0px;
 }
 .login__container--social-media > div {
-    align-items: center;
-    display: flex;
     font-size: 14px;
     margin-bottom: 16px;
+    @extend .flex;
 }
 
 .login__container--social-media > div > img {
@@ -275,6 +289,7 @@ ul:hover {
     color: $white;
     font-size: 16px;
     font-weight: bold;
+    margin-right: 8px;
     text-decoration: none;
 }
 
@@ -297,7 +312,8 @@ ul:hover {
     margin-top: 16px;
     margin-bottom: 16px;
     outline: none;
-    padding: 12px 20px;
+    padding: 12px 14px;
+    width: 100%;
 }
 
 .input-login::placeholder,
@@ -323,11 +339,10 @@ ul:hover {
 }
 
 .footer {
-    align-items: center;
     background-color: #ab88ff;
-    display: flex;
     height: 100px;
     width: 100%;
+    @extend .flex;
 }
 
 .footer a {
@@ -353,13 +368,12 @@ ul:hover {
 
 .not-found {
     color: $white;
-    align-items: center;
     background: linear-gradient(#21c08b, #ab88ff);
-    display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: calc(100vh - 200px);
     padding: 0px 30px;
+    @extend .flex;
 }
 
 .not-found__title {
@@ -367,7 +381,11 @@ ul:hover {
     margin: 4px;
 }
 
-.not-found__button{
+.not-found__subtitle {
+    margin: 14px 0;
+}
+
+.not-found__button {
     @include border-radius(20px);
     padding: 8px 16px;
     height: 40px;
@@ -376,9 +394,9 @@ ul:hover {
     outline: none;
     border: none;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
 }
-.not-found__button:hover{
+.not-found__button:hover {
     transform: scale(1.08);
 }
 
