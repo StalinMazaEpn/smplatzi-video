@@ -1,3 +1,14 @@
 # SMPlatzi Video
 
-Repositorio del curso de Frontend Developer de Platzi
+Repository of FrontEnd Developer Course By Platzi
+
+## Andy
+
+Accessibility Testing Tool
+
+## Storybook
+
+**For HTML**
+```
+npx sb init
+```

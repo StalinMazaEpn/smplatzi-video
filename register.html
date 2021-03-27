@@ -11,16 +11,16 @@
 
 <body>
     <header class="header">
-        <img class="header__img" src="./img/logo-platzi.png" alt="Logo de Platzi Video">
+        <img tabindex="0" class="header__img" src="./img/logo-platzi.png" alt="Logo de Platzi Video">
     </header>
     <div class="register">
         <div class="register__container">
-            <h2>Register</h2>
+            <h2 tabindex="0">Register</h2>
             <form action="#" method="POST" class="register_container--form">
 
-                <input class="input-register" type="text" name="fullname" id="fullname" placeholder="Fullname" />
-                <input class="input-register" type="email" name="email" id="email" placeholder="Email" />
-                <input class="input-register" type="password" name="password" id="password" placeholder="Password" />
+                <input class="input-register" aria-label="Fullname" type="text" name="fullname" id="fullname" placeholder="Fullname" />
+                <input aria-label="Email" class="input-register" type="email" name="email" id="email" placeholder="Email" />
+                <input aria-label="Password" class="input-register" type="password" name="password" id="password" placeholder="Password" />
                 <button class="button-register">Register</button>
             </form>
             <p class="register__container--login"><a href="/">Sign In</a> </p>

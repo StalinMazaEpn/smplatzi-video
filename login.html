@@ -11,14 +11,14 @@
 
 <body>
     <header class="header">
-        <img class="header__img" src="./img/logo-platzi.png" alt="Logo de Platzi Video">
+        <img tabindex="0" class="header__img" src="./img/logo-platzi.png" alt="Logo de Platzi Video">
     </header>
     <section class="login">
         <div class="login__container">
-            <h2>Sign In</h2>
+            <h2 tabindex="0">Sign In</h2>
             <form action="#" method="POST" class="login__container--form">
-                <input class="input-login" type="text" name="email" id="email" placeholder="Email"/>
-                <input class="input-login" type="password" name="password" id="password" placeholder="Password"/>
+                <input aria-label="Email" class="input-login" type="text" name="email" id="email" placeholder="Email"/>
+                <input aria-label="Password" class="input-login" type="password" name="password" id="password" placeholder="Password"/>
                 <button class="button-login">Sign In</button>
                 <div class="login__container--remember-me">
                     <label>
