@@ -1,7 +1,7 @@
 /*USING BEM ARQUITECTURE*/
 :root {
     --bg-color: #8f57fd;
-    --secondary-color: rgba(255,255,255,.1);
+    --secondary-color: rgba(255, 255, 255, 0.1);
     --green-color: #21c08b;
 }
 
@@ -9,6 +9,25 @@ body {
     background: var(--bg-color);
     font-family: "Mulish", sans-serif;
     margin: 0px;
+}
+
+/* Scroll */
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+::-webkit-scrollbar:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar:hover:active {
+    background: #999;
 }
 
 .header {
@@ -74,7 +93,6 @@ ul:hover {
 
 .main {
     align-items: center;
-    border: 1px solid salmon;
     display: flex;
     flex-direction: column;
     height: 300px;
@@ -86,11 +104,19 @@ ul:hover {
     font-size: 25px;
 }
 
+.categories__title {
+    color: white;
+    font-size: 16px;
+    padding-left: 30px;
+    position: absolute;
+    width: 100%;
+}
+
 .input-app {
     background: var(--secondary-color);
     border-radius: 30px;
     border: 2px solid white;
-    color:white;
+    color: white;
     font-family: "Mulish", sans-serif;
     font-size: 16px;
     height: 50px;
@@ -98,24 +124,24 @@ ul:hover {
     padding: 0 20px;
     width: 70%;
 }
-.input-app::placeholder{
+.input-app::placeholder {
     color: white;
 }
 
-.carousel{
+.carousel {
     overflow-x: scroll;
     padding: 30px;
     position: relative;
     width: 100%;
 }
 
-.carousel__container{
+.carousel__container {
     margin: 70px 0;
     padding-bottom: 10px;
     white-space: nowrap; /* Elementos fluyan sin romperse hacia abajo*/
 }
 
-.carousel-item{
+.carousel-item {
     background: palevioletred;
     border-radius: 20px;
     cursor: pointer;
@@ -123,36 +149,39 @@ ul:hover {
     height: 220px;
     margin-right: 10px;
     overflow: hidden;
-    transition: 450ms all;
-    transform-origin: center left;
-    width: 180px;
     position: relative;
+    transform-origin: center left;
+    transition: 450ms all;
+    width: 180px;
 }
 
-.carousel-item:hover ~ .carousel-item{
+.carousel-item:hover ~ .carousel-item {
     transform: translate3d(100px, 0, 0);
 }
 
-.carousel__container:hover .carousel-item{
+.carousel__container:hover .carousel-item {
     opacity: 0.3;
 }
 
-.carousel__container:hover .carousel-item:hover{
-    transform: scale(1.5);
+.carousel__container:hover .carousel-item:hover {
     opacity: 1;
+    transform: scale(1.5);
 }
 
-.carousel-item__img{
+.carousel-item__img {
     height: 220px;
     object-fit: cover;
     width: 180px;
 }
 
-.carousel-item__details{
-    background: linear-gradient(to top, rgba(0,0,0,.9 0%), rgba(0,0,0,0) 100%);
+.carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9 0%), rgba(0, 0, 0, 0) 100%);
     bottom: 0;
     color: white;
+    display: flex;
+    flex-direction: column;
     font-style: 10px;
+    justify-content: flex-end;
     left: 0;
     opacity: 0;
     padding: 10px;
@@ -160,20 +189,186 @@ ul:hover {
     right: 0;
     top: 0;
     transition: 450ms opacity;
-
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
 }
 
-.carousel-item__details img{
+.carousel-item__details img {
     height: 15px;
 }
-.carousel-item__details p{
+.carousel-item__details p {
     margin: 0;
 }
 
-.carousel-item__details:hover{
+.carousel-item__details:hover {
     bottom: 10px;
     opacity: 1;
+}
+
+.login,
+.register {
+    align-items: center;
+    background: linear-gradient(#21c08b, #ab88ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    padding: 0px 30px;
+}
+
+.login__container,
+.register__container {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    border: 2px solid white;
+    color: white;
+    min-height: 500px;
+    padding: 60px 68px 40px;
+    width: 300px;
+}
+
+.login__container--form,
+.register__container--form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__container--form label {
+    font-size: 14px;
+}
+
+.login__container--remember-me {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.login__container--remember-me a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login__container--remember-me a:hover {
+    text-decoration: underline;
+}
+
+.login__container--social-media {
+    margin: 40px 0px;
+}
+.login__container--social-media > div {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.login__container--social-media > div > img {
+    margin-right: 10px;
+    width: 30px;
+}
+
+.login__container--register,
+.register__container--login {
+    font-style: 14px;
+}
+.login__container--register a,
+.register__container--login a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login__container--register a:hover,
+.register__container--login a:hover {
+    text-decoration: underline;
+}
+
+.input-login,
+.input-register {
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    border-left: 0px;
+    border-right: 0;
+    border-top: 0;
+    color: white;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    outline: none;
+    padding: 12px 20px;
+}
+
+.input-login::placeholder,
+.input-register::placeholder {
+    color: white;
+}
+
+.button-login,
+.button-register {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    outline: none;
+    width: 100%;
+}
+
+.footer {
+    align-items: center;
+    background-color: #ab88ff;
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+
+.footer a {
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.register__container h2 {
+    margin-bottom: 40px;
+}
+
+.register__container--login a {
+    display: block;
+    margin-top: 60px;
+    text-align: center;
+}
+
+/*600px or less*/
+@media only screen and (max-width: 600px) {
+    .login__container,
+    .register__container {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer a {
+        margin-bottom: 10px;
+    }
 }
